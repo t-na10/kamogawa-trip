@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エアビー@鴨川 しおり</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .booklet {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .cover {
+            background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .cover h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .cover .date {
+            font-size: 1.3em;
+            margin-top: 20px;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section h2 {
+            color: #2193b0;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #6dd5ed;
+        }
+
+        .section h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+
+        .members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .member-card {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .car-group {
+            background: #fff5f5;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .facility-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-item {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .feature-item .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .schedule-table th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        .schedule-table tr:hover {
+            background: #f8f9ff;
+        }
+
+        .role-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .role-table th,
+        .role-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+        }
+
+        .role-table th {
+            background: #764ba2;
+            color: white;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #ffc107;
+            margin: 15px 0;
+        }
+
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9ff;
+            border-radius: 5px;
+        }
+
+        .checklist li:before {
+            content: "☐ ";
+            font-size: 1.2em;
+            margin-right: 10px;
+            color: #667eea;
+        }
+
+        .spots-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spots-list li {
+            padding: 12px;
+            margin: 8px 0;
+            background: #e8f5e9;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .footer {
+            background: #f5f5f5;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .booklet {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="booklet">
+        <div class="cover">
+            <h1>🌊 エアビー@鴨川 🌊</h1>
+            <div class="date">📅 2025年10月18日(土)〜19日(日)</div>
+            <div style="margin-top: 30px; font-size: 1.1em;">
+                同期旅行しおり
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>👥 参加メンバー（8名）</h2>
+                <div class="members">
+                    <div class="member-card">
+                        <strong>taro</strong><br>
+                        企画・運転・財務補佐
+                    </div>
+                    <div class="member-card">
+                        <strong>村松 俊平</strong><br>
+                        最高総司令官・運転
+                    </div>
+                    <div class="member-card">
+                        <strong>きたしゅうへい</strong><br>
+                        運転・BGM担当
+                    </div>
+                    <div class="member-card">
+                        <strong>幡 祐輔</strong><br>
+                        運転
+                    </div>
+                    <div class="member-card">
+                        <strong>Yuki Kanto</strong><br>
+                        写真・火遊び担当
+                    </div>
+                    <div class="member-card">
+                        <strong>こしのあきら</strong>
+                    </div>
+                    <div class="member-card">
+                        <strong>りょう(おはぎ)</strong><br>
+                        財務担当
+                    </div>
+                    <div class="member-card">
+                        <strong>さくら</strong>
+                    </div>
+                </div>
+                <div class="highlight" style="margin-top: 20px;">
+                    <strong>😢 欠席：</strong> 中川えいと（インフルエンザA型のため）<br>
+                    お大事に！次回は絶対参加してね！
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🚗 車両分担</h2>
+                <div class="car-group">
+                    <h3>🚙 喜多・村松号（ヤリス）</h3>
+                    <strong>運転：</strong>きたしゅうへい、村松俊平<br>
+                    <strong>乗車：</strong>幡、越野、神<br>
+                    <strong>ETCカード：</strong>きたしゅうへい
+                </div>
+                <div class="car-group">
+                    <h3>🚙 仲宗根・萩原号</h3>
+                    <strong>運転：</strong>taro<br>
+                    <strong>乗車：</strong>関東、りょう(おはぎ)<br>
+                    <strong>ETCカード：</strong>taro
+                </div>
+                <div class="highlight">
+                    <strong>⏰ 出発時刻：9:00</strong><br>
+                    ※アクアライン手前で合流の可能性あり
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🏠 宿泊先情報</h2>
+                <p><strong>📍 住所：</strong>〒296-0043 千葉県鴨川市西町１１３０−１</p>
+                <p><strong>⏰ チェックイン：</strong>15:00（自動チェックイン）</p>
+                <p><strong>💰 宿泊費：</strong>一人あたり ¥21,750（事前徴収済み）</p>
+
+                <h3>✨ 施設の特徴</h3>
+                <div class="facility-features">
+                    <div class="feature-item">
+                        <div class="icon">🍺</div>
+                        ビールサーバー完備
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🧖</div>
+                        プライベートサウナ
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🏊</div>
+                        プライベートプール
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🍖</div>
+                        BBQグリル
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">📺</div>
+                        大型テレビ
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🛏️</div>
+                        十分な寝床
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📍 1日目：10月18日(土)</h2>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>時刻</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>9:00</td>
+                            <td>各車移動開始</td>
+                        </tr>
+                        <tr>
+                            <td>11:30頃</td>
+                            <td>ランチ@田舎レストランじんべえ</td>
+                        </tr>
+                        <tr>
+                            <td>13:00〜16:00</td>
+                            <td>景勝地巡り・マザー牧場方面</td>
+                        </tr>
+                        <tr>
+                            <td>15:00〜16:00</td>
+                            <td>コテージ到着</td>
+                        </tr>
+                        <tr>
+                            <td>18:00〜19:00</td>
+                            <td>買い出し（BBQ食材・飲み物）</td>
+                        </tr>
+                        <tr>
+                            <td>19:30〜</td>
+                            <td>BBQ・ビールサーバー・サウナ・プール等</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🍽️ ランチ</h3>
+                <div class="highlight">
+                    <strong>田舎レストランじんべえ</strong><br>
+                    ✅ 地元の方お墨付き！<br>
+                    ✅ 広い店舗＆駐車場<br>
+                    ✅ 田んぼ道の鋭角カーブが名物
+                </div>
+
+                <h3>🗻 観光候補スポット</h3>
+                <ul class="spots-list">
+                    <li>🐏 <strong>マザー牧場</strong>（コキアシーズン！）</li>
+                    <li>⛰️ <strong>鋸山・地獄のぞき</strong>（ロープウェイあり）</li>
+                    <li>🌉 <strong>原岡桟橋</strong>（映えスポット）</li>
+                    <li>🌄 <strong>九十九谷</strong>（夕方の景色が最高）</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📍 2日目：10月19日(日)</h2>
+                <div class="highlight">
+                    <strong>⚠️ 天気予報：</strong>日曜やや雨の可能性あり → 屋内施設中心がおすすめ
+                </div>
+
+                <h3>予定（当日みんなで相談）</h3>
+                <ul class="spots-list">
+                    <li>🐬 <strong>鴨川シーワールド</strong>（雨天でも楽しめる）</li>
+                    <li>🌊 <strong>海鮮ランチ</strong>（海沿い）</li>
+                    <li>🏖️ <strong>海中展望塔</strong>（勝浦）</li>
+                    <li>その他、リストから選択</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🎒 持ち物チェックリスト</h2>
+                <ul class="checklist">
+                    <li>歯ブラシ等アメニティ（念のため）</li>
+                    <li>🩳 水着（プール入るなら）</li>
+                    <li>🎮 ボードゲーム、アコギなど</li>
+                    <li>📸 カメラ</li>
+                    <li>その他個人で必要なもの</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>👔 役割分担</h2>
+                <table class="role-table">
+                    <thead>
+                        <tr>
+                            <th>役割</th>
+                            <th>担当者</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>最高総司令官（傀儡）</td>
+                            <td>村松俊平</td>
+                        </tr>
+                        <tr>
+                            <td>運転</td>
+                            <td>taro、村松、きたしゅうへい、幡</td>
+                        </tr>
+                        <tr>
+                            <td>企画</td>
+                            <td>村松俊平</td>
+                        </tr>
+                        <tr>
+                            <td>写真・広報・火遊び</td>
+                            <td>Yuki Kanto</td>
+                        </tr>
+                        <tr>
+                            <td>財務</td>
+                            <td>りょう(おはぎ)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>💰 お金について</h2>
+                <ul>
+                    <li><strong>宿泊費：</strong>事前徴収済み（¥21,750/人）</li>
+                    <li><strong>その他費用：</strong>Waricanアプリで管理</li>
+                    <li><strong>レシート回収：</strong>財務担当（りょう）</li>
+                    <li><strong>立替：</strong>各自OK</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🎯 やりたいこと</h2>
+                <ul class="spots-list">
+                    <li>🍖 BBQでたらふく肉を食べる</li>
+                    <li>🧖 サウナ＆プール</li>
+                    <li>🍺 ビールサーバーで乾杯</li>
+                    <li>🎲 ジェンガ（村松リクエスト）</li>
+                    <li>🎸 アコギ演奏</li>
+                    <li>📸 思い出写真撮影</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🌟 特記事項</h2>
+                <div class="highlight">
+                    <ul style="margin-left: 20px;">
+                        <li>ビールサーバーの確認は現地到着後</li>
+                        <li>飲み物は現地で調達</li>
+                        <li>水着なしでもサウナは入れます</li>
+                        <li>水着なしでプール入ったらミーム化確定 😈</li>
+                        <li>役割ない人は村松くんからタスクが降ってきます🫡</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3 style="color: #667eea; margin-bottom: 15px;">🎉 みんなで最高の思い出を作りましょう！ 🎉</h3>
+            <p>作成日：2025年10月16日</p>
+            <p>制作：村松俊平（20分の作業時間に意味を持たせるため）</p>
+            <p>改訂：Claude（刺しアイコンにアイデンティティがあってすき）</p>
+        </div>
+    </div>
+</body>
+
+</html>
